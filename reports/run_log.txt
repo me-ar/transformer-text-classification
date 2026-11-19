@@ -1,0 +1,57 @@
+train=9002 val=1001 test=3080 classes=77
+TF-IDF + LogReg                  acc=0.9088 macroF1=0.9089 ECE=0.1391
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11605.77it/s]
+MiniLM embeddings + LogReg       acc=0.9269 macroF1=0.9267 ECE=0.0752
+== DistilBERT (full fine-tune)
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]Loading weights: 100%|██████████| 100/100 [00:00<00:00, 10999.15it/s]
+[transformers] [1mDistilBertForSequenceClassification LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     | 
+------------------------+------------+-
+vocab_layer_norm.bias   | UNEXPECTED | 
+vocab_projector.bias    | UNEXPECTED | 
+vocab_transform.weight  | UNEXPECTED | 
+vocab_layer_norm.weight | UNEXPECTED | 
+vocab_transform.bias    | UNEXPECTED | 
+pre_classifier.bias     | MISSING    | 
+classifier.bias         | MISSING    | 
+pre_classifier.weight   | MISSING    | 
+classifier.weight       | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 67,012,685 / 67,012,685 (100.00%)
+  epoch 1: loss=3.1289 val macro-F1=0.7432 (595s)
+  epoch 2: loss=0.8318 val macro-F1=0.8948 (1203s)
+  epoch 3: loss=0.3347 val macro-F1=0.9222 (1815s)
+  epoch 4: loss=0.1867 val macro-F1=0.9235 (2428s)
+DistilBERT (full fine-tune)      acc=0.9218 macroF1=0.9218 ECE=0.0394
+== DistilBERT + LoRA (r=8)
+Loading weights:   0%|          | 0/100 [00:00<?, ?it/s]Loading weights: 100%|██████████| 100/100 [00:00<00:00, 11196.45it/s]
+[transformers] [1mDistilBertForSequenceClassification LOAD REPORT[0m from: distilbert-base-uncased
+Key                     | Status     | 
+------------------------+------------+-
+vocab_layer_norm.bias   | UNEXPECTED | 
+vocab_projector.bias    | UNEXPECTED | 
+vocab_transform.weight  | UNEXPECTED | 
+vocab_layer_norm.weight | UNEXPECTED | 
+vocab_transform.bias    | UNEXPECTED | 
+pre_classifier.bias     | MISSING    | 
+classifier.bias         | MISSING    | 
+pre_classifier.weight   | MISSING    | 
+classifier.weight       | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+/opt/hostedtoolcache/Python/3.13.18/x64/lib/python3.13/site-packages/transformers/modeling_utils.py:3303: FutureWarning: `is_gradient_checkpointing` is deprecated and will be removed in v6. Use `is_activation_checkpointing` instead.
+  warnings.warn(
+trainable params: 797,261 / 67,809,946 (1.18%)
+  epoch 1: loss=2.5076 val macro-F1=0.7802 (396s)
+  epoch 2: loss=0.5854 val macro-F1=0.8791 (800s)
+  epoch 3: loss=0.3694 val macro-F1=0.8960 (1204s)
+  epoch 4: loss=0.2652 val macro-F1=0.9059 (1621s)
+  epoch 5: loss=0.2066 val macro-F1=0.9050 (2032s)
+  epoch 6: loss=0.1650 val macro-F1=0.9123 (2445s)
+DistilBERT + LoRA (r=8)          acc=0.9153 macroF1=0.9155 ECE=0.0117

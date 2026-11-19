@@ -1,0 +1,26 @@
+text,category,predicted,confidence
+how many transactions can i make with a disposable card,get_disposable_virtual_card,disposable_card_limits,0.99
+Where do I find the exchange rate?,exchange_charge,exchange_rate,0.973
+My transfer is pending.,balance_not_updated_after_bank_transfer,pending_transfer,0.97
+What can I use a virtual disposable card for?,disposable_card_limits,get_disposable_virtual_card,0.968
+Where can I view my PIN?,pin_blocked,get_physical_card,0.962
+What other methods are there to verify my identity?,why_verify_identity,verify_my_identity,0.955
+"I was double charged, and the second charge is showing as ""pending"". How long will it be before I get my money back once the second charge has been refunded?",pending_card_payment,transaction_charged_twice,0.937
+What do i need to verify my id?,unable_to_verify_identity,verify_my_identity,0.916
+"I would like to know why my payment is still pending, can you help?",pending_transfer,pending_card_payment,0.912
+My card is just not working at this time.,virtual_card_not_working,card_not_working,0.908
+Will declined funds I tried to withdraw be returned to me?,wrong_amount_of_cash_received,declined_cash_withdrawal,0.902
+how long dies it take for transfers to reflect on my balance,transfer_timing,balance_not_updated_after_bank_transfer,0.9
+whats your exchange rate,exchange_charge,exchange_rate,0.896
+How long does a card delivery take?,card_arrival,card_delivery_estimate,0.894
+My non-physical card will not work,virtual_card_not_working,card_not_working,0.89
+My cash withdrawal was partly declined,wrong_amount_of_cash_received,declined_cash_withdrawal,0.871
+How do I do a successful transfer to an account?,beneficiary_not_allowed,transfer_into_account,0.858
+"I wasn't charged the correct amount for an item I purchased, how can I fix this?",request_refund,card_payment_wrong_exchange_rate,0.821
+How do I top up my card?,transfer_into_account,topping_up_by_card,0.819
+what is this charge on my account,direct_debit_payment_not_recognised,extra_charge_on_statement,0.817
+How many virtual cards do I get?,disposable_card_limits,getting_virtual_card,0.817
+When will my transfer be available in my account.,balance_not_updated_after_bank_transfer,transfer_timing,0.812
+transaction failed?,transfer_not_received_by_recipient,failed_transfer,0.8
+how do VR cards work,get_disposable_virtual_card,getting_virtual_card,0.796
+What are the fees for top-ups?,top_up_by_bank_transfer_charge,top_up_by_card_charge,0.786

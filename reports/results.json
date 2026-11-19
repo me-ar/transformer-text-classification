@@ -1,0 +1,279 @@
+{
+  "best_model": "MiniLM embeddings + LogReg",
+  "results": [
+    {
+      "model": "TF-IDF + LogReg",
+      "accuracy": 0.9088,
+      "macro_f1": 0.9089,
+      "ece": 0.1391,
+      "latency_ms_per_example": 0.038,
+      "train_seconds": 28.8,
+      "trainable_params": 2730420,
+      "ece_after_temp_scaling": NaN,
+      "temperature": NaN
+    },
+    {
+      "model": "MiniLM embeddings + LogReg",
+      "accuracy": 0.9269,
+      "macro_f1": 0.9267,
+      "ece": 0.0752,
+      "latency_ms_per_example": 2.427,
+      "train_seconds": 28.0,
+      "trainable_params": 29568,
+      "ece_after_temp_scaling": NaN,
+      "temperature": NaN
+    },
+    {
+      "model": "DistilBERT (full fine-tune)",
+      "accuracy": 0.9218,
+      "macro_f1": 0.9218,
+      "ece": 0.0394,
+      "latency_ms_per_example": 13.995,
+      "train_seconds": 2427.9,
+      "trainable_params": 67012685,
+      "ece_after_temp_scaling": 0.0151,
+      "temperature": 0.85
+    },
+    {
+      "model": "DistilBERT + LoRA (r=8)",
+      "accuracy": 0.9153,
+      "macro_f1": 0.9155,
+      "ece": 0.0117,
+      "latency_ms_per_example": 14.797,
+      "train_seconds": 2445.1,
+      "trainable_params": 797261,
+      "ece_after_temp_scaling": 0.0117,
+      "temperature": 1.15
+    }
+  ],
+  "data_efficiency": [
+    {
+      "shots_per_class": 5,
+      "n_train": 385,
+      "model": "TF-IDF + LogReg",
+      "macro_f1": 0.6234
+    },
+    {
+      "shots_per_class": 5,
+      "n_train": 385,
+      "model": "MiniLM embeddings + LogReg",
+      "macro_f1": 0.8029
+    },
+    {
+      "shots_per_class": 10,
+      "n_train": 770,
+      "model": "TF-IDF + LogReg",
+      "macro_f1": 0.7572
+    },
+    {
+      "shots_per_class": 10,
+      "n_train": 770,
+      "model": "MiniLM embeddings + LogReg",
+      "macro_f1": 0.8524
+    },
+    {
+      "shots_per_class": 20,
+      "n_train": 1540,
+      "model": "TF-IDF + LogReg",
+      "macro_f1": 0.8181
+    },
+    {
+      "shots_per_class": 20,
+      "n_train": 1540,
+      "model": "MiniLM embeddings + LogReg",
+      "macro_f1": 0.8838
+    },
+    {
+      "shots_per_class": 50,
+      "n_train": 3819,
+      "model": "TF-IDF + LogReg",
+      "macro_f1": 0.8884
+    },
+    {
+      "shots_per_class": 50,
+      "n_train": 3819,
+      "model": "MiniLM embeddings + LogReg",
+      "macro_f1": 0.9114
+    },
+    {
+      "shots_per_class": 1000,
+      "n_train": 9002,
+      "model": "TF-IDF + LogReg",
+      "macro_f1": 0.9103
+    },
+    {
+      "shots_per_class": 1000,
+      "n_train": 9002,
+      "model": "MiniLM embeddings + LogReg",
+      "macro_f1": 0.9267
+    }
+  ],
+  "top_confused_pairs": [
+    {
+      "count": 7,
+      "a": "card_arrival",
+      "b": "card_delivery_estimate"
+    },
+    {
+      "count": 6,
+      "a": "balance_not_updated_after_bank_transfer",
+      "b": "transfer_not_received_by_recipient"
+    },
+    {
+      "count": 5,
+      "a": "pending_transfer",
+      "b": "transfer_timing"
+    },
+    {
+      "count": 5,
+      "a": "exchange_via_app",
+      "b": "fiat_currency_support"
+    },
+    {
+      "count": 5,
+      "a": "declined_card_payment",
+      "b": "declined_transfer"
+    },
+    {
+      "count": 5,
+      "a": "card_payment_not_recognised",
+      "b": "compromised_card"
+    },
+    {
+      "count": 4,
+      "a": "verify_my_identity",
+      "b": "why_verify_identity"
+    },
+    {
+      "count": 4,
+      "a": "top_up_failed",
+      "b": "top_up_reverted"
+    },
+    {
+      "count": 4,
+      "a": "pending_transfer",
+      "b": "transfer_not_received_by_recipient"
+    },
+    {
+      "count": 4,
+      "a": "balance_not_updated_after_bank_transfer",
+      "b": "transfer_timing"
+    }
+  ],
+  "worst_classes": [
+    {
+      "intent": "pending_transfer",
+      "f1": 0.7826
+    },
+    {
+      "intent": "balance_not_updated_after_bank_transfer",
+      "f1": 0.7838
+    },
+    {
+      "intent": "transfer_not_received_by_recipient",
+      "f1": 0.7952
+    },
+    {
+      "intent": "declined_transfer",
+      "f1": 0.8235
+    },
+    {
+      "intent": "direct_debit_payment_not_recognised",
+      "f1": 0.8462
+    },
+    {
+      "intent": "compromised_card",
+      "f1": 0.8608
+    },
+    {
+      "intent": "cash_withdrawal_not_recognised",
+      "f1": 0.8636
+    },
+    {
+      "intent": "top_up_reverted",
+      "f1": 0.8642
+    },
+    {
+      "intent": "transfer_timing",
+      "f1": 0.8667
+    },
+    {
+      "intent": "beneficiary_not_allowed",
+      "f1": 0.875
+    }
+  ],
+  "training": {
+    "DistilBERT (full fine-tune)": {
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 3.1289,
+          "val_macro_f1": 0.7432,
+          "elapsed_s": 595.2
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.8318,
+          "val_macro_f1": 0.8948,
+          "elapsed_s": 1203.2
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.3347,
+          "val_macro_f1": 0.9222,
+          "elapsed_s": 1815.4
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.1867,
+          "val_macro_f1": 0.9235,
+          "elapsed_s": 2427.9
+        }
+      ],
+      "total_params": 67012685,
+      "temperature": 0.8500000000000001
+    },
+    "DistilBERT + LoRA (r=8)": {
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.5076,
+          "val_macro_f1": 0.7802,
+          "elapsed_s": 396.0
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.5854,
+          "val_macro_f1": 0.8791,
+          "elapsed_s": 799.6
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.3694,
+          "val_macro_f1": 0.896,
+          "elapsed_s": 1203.5
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.2652,
+          "val_macro_f1": 0.9059,
+          "elapsed_s": 1621.5
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.2066,
+          "val_macro_f1": 0.905,
+          "elapsed_s": 2032.0
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.165,
+          "val_macro_f1": 0.9123,
+          "elapsed_s": 2445.0
+        }
+      ],
+      "total_params": 67809946,
+      "temperature": 1.15
+    }
+  }
+}
